@@ -1,0 +1,59 @@
+﻿@model fshop.Models.product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<link href="~/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/table.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+    <div class="row">
+        < class="col-md-12">
+        <div class="alert alert-info">
+            Please Wait...
+        </div>
+        <div class="alert alert-success" style="display:none;">
+            <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order
+        </div>
+        <table class="table">
+            <div class="row">
+                <div class="col-md-4">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="id" />
+                        <div class="form-group">
+
+                        
+                            <input type="hidden" asp-for="Name" class="form-control" />
+
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" asp-for="photo" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Quantity" class="control-label"></label>
+                            <input asp-for="Quantity" class="form-control" />
+                            <span asp-validation-for="Quantity" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Price" class="control-label"></label>
+                            <input asp-for="Price" class="form-control" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+           
+            </table>
+        </div>
+    </div>
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }

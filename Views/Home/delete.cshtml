@@ -1,0 +1,68 @@
+﻿
+@model fshop.Models.product
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<link href="~/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/table.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info">
+                Please Wait...
+            </div>
+            <div class="alert alert-success" style="display:none;">
+                <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order
+            </div>
+            <table class="table">
+
+
+
+
+                <thead>
+                    <tr class="active">
+
+                        <td>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.photo)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.photo)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => model.Price)
+                        </td>
+
+
+                    </tr>
+                </thead>
+            </table>
+            <h1>Delete</h1>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="id" />
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+               
+            </form>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<fshop.Models.product>
+<link href="~/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/table.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info">
+                Please Wait...
+            </div>
+            <div class="alert alert-success" style="display:none;">
+                <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order
+            </div>
+            <table class="table">
+                
+                    <thead>
+                        <tr class="active">
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.photo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Price)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+
+
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <tr class="warning">
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => product.photo){ 
+                                <img src="~/images/@product.photo" width="200" />} 
+
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Quantity)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => product.Price)
+                            </td>
+
+
+
+
+
+
+                            <td>
+
+                                <a asp-action="Edit" asp-route-id=" @product.id">Update</a> |
+                         
+                                <a asp-action="Delete" asp-route-id=" @product.id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</table>
+
+
+
+

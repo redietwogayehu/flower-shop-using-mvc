@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewData["Title"] = "login";
+}
+
+@{
+    ViewData["Title"] = "login";
+}
+
+
+
+
+
+<html5>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="~/css/bootstrap.css">
+        <link rel="stylesheet" href="~/css/custom.css">
+
+        <script src="~/js/jquery.min.js"></script>
+        <script src="~/js/bootstrap.js"></script>
+        <script src="~/js/jquery.validate.min.js"></script>
+
+        <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+    </head>
+
+
+    <style>
+
+        /* Full-width inputs */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            /* Add a hover effect for buttons */
+            button:hover {
+                opacity: 0.8;
+            }
+
+        /* Extra style for the cancel button (red) */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        /* Center the avatar image inside this container */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+            display: block;
+        }
+
+        .cancelbtn {
+            width: 100%;
+        }
+        }
+    </style>
+    <body class="container">
+        <center>
+
+            <div id="container">
+                <div class="d-flex justify-content-center h-100">
+                    <div class="card">
+                        <div class="card-header">
+
+                            <h3>Sign In</h3>
+                        </div>
+                        <div class="card-body">
+
+
+                            @model product
+
+                            <form asp-action="register">
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input asp-for="Name" type="text" class="form-control" name="name" placeholder="Name">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <input asp-for="Price" type="text" class="form-control" name="price" placeholder="price">
+                                    <span asp-validation-for="Price" class="text-danger"></span>
+
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <input asp-for="Quantity" type="text" class="form-control" name="quantity" placeholder="Quantity">
+                                    <span asp-validation-for="Quantity" class="text-danger"></span>
+
+                                </div>
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <input  asp-for="photo" asp-action="images/download(11).jpg" type="text" class="form-control" placeholder="image">
+                                    <span asp-validation-for="photo"  class="text-danger"></span>
+                                    
+                                   
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="add" class="btn float-right login_btn">
+                                </div>
+                            </form>
+                            <div>
+                                <a asp-action="Index1">To Edit</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                        </center>
+        
+    </body>
